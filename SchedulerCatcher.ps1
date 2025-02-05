@@ -9,7 +9,7 @@ $tasks = Get-ScheduledTask | ForEach-Object {
         # Lista de executáveis potencialmente usados para bypass de segurança
         $bypassPrograms = @(
             "cmd.exe", "powershell.exe", "powershell_ise.exe", "rundll32.exe", "regsvr32.exe", 
-            "taskmgr.exe", "LaunchTM.exe"
+            "taskmgr.exe", "LaunchTM.exe", "WinRAR.exe"
         )
         
         # Verifica se a ação está na lista de programas suspeitos
