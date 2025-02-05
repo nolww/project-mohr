@@ -1,0 +1,39 @@
+Start-Sleep -Seconds 1
+Write-Host "Executando Script para listar todas as tarefas agendadas"
+Start-Sleep -Seconds 1
+
+# Obtém todas as tarefas agendadas e classifica as suspeitas
+$tasks = Get-ScheduledTask | ForEach-Object {
+    $task = $_
+    $actions = $task.Actions | ForEach-Object {
+        # Lista de executáveis potencialmente usados para bypass de segurança
+        $bypassPrograms = @(
+            "cmd.exe", "powershell.exe", "powershell_ise.exe", "rundll32.exe", "regsvr32.exe"
+        )
+        
+        # Verifica se a ação está na lista de programas suspeitos
+        $suspect = if ($_.Execute -match ($bypassPrograms -join "|")) {
+            "Sim"
+        } else {
+            "Não"
+        }
+        
+        [PSCustomObject]@{
+            TaskName = $task.TaskName
+            TaskPath = $task.TaskPath
+            Action = $_.Execute
+            Arguments = $_.Arguments
+            Suspeita = $suspect
+        }
+    }
+    $actions
+}
+
+if ($tasks) {
+    $tasks | Out-GridView -Title "Todas as Tarefas Agendadas" -PassThru
+} else {
+    Write-Host "Nenhuma tarefa agendada encontrada."
+}
+
+# Mantém a janela aberta para evitar fechamento automático
+Read-Host "Pressione Enter para sair"
