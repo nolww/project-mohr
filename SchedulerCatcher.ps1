@@ -14,9 +14,9 @@ $tasks = Get-ScheduledTask | ForEach-Object {
         
         # Verifica se a ação está na lista de programas suspeitos
         $suspect = if ($_.Execute -match ($bypassPrograms -join "|")) {
-            "Sim"
+            "Yes"
         } else {
-            "Não"
+            "No"
         }
         
         [PSCustomObject]@{
@@ -33,8 +33,8 @@ $tasks = Get-ScheduledTask | ForEach-Object {
 if ($tasks) {
     $tasks | Out-GridView -Title "Scheduler catcher by NOLW" -PassThru
 } else {
-    Write-Host "Nenhuma tarefa agendada encontrada."
+    Write-Host "No tasks found"
 }
 
 # Mantém a janela aberta para evitar fechamento automático
-Read-Host "Pressione Enter para sair"
+Read-Host "Press enter to quit"
