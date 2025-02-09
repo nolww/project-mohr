@@ -24,7 +24,7 @@ $tasks = Get-ScheduledTask | ForEach-Object {
             TaskPath = $task.TaskPath
             Action = $_.Execute
             Arguments = $_.Arguments
-            Suspeita = $suspect
+            Suspicion = $suspect
         }
     }
     $actions
