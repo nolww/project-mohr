@@ -1,6 +1,6 @@
 Start-Sleep -Seconds 1
 Write-Host "Made by nolw (the dogshit sser)" -ForegroundColor Red
-Write-Host "Analyzing scheduled tasks" -ForegroundColor Red
+Write-Host "Analyzing scheduled tasks..." -ForegroundColor Red
 Start-Sleep -Seconds 1
 
 
