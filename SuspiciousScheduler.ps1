@@ -1,5 +1,6 @@
 Start-Sleep -Seconds 1
-Write-Host "Analyzing Scheduled Tasks..." -ForegroundColor Cyan
+Write-Host "Made by nolw (the dogshit sser)" -ForegroundColor Red
+Write-Host "Analyzing scheduled tasks" -ForegroundColor Red
 Start-Sleep -Seconds 1
 
 
@@ -37,4 +38,4 @@ if ($tasks) {
 }
 
 
-Write-Host "by nolw (DogShit SSer)" -ForegroundColor Magenta
+Write-Host "PRESS ENTER TO QUIT" -ForegroundColor White
