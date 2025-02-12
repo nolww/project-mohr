@@ -1,5 +1,5 @@
 Start-Sleep -Seconds 1
-Write-Host "Scheduler Parser by nolw"
+Write-Host "Analyzing Scheduled Tasks..." -ForegroundColor Cyan
 Start-Sleep -Seconds 1
 
 
@@ -31,10 +31,10 @@ $tasks = Get-ScheduledTask | ForEach-Object {
 }
 
 if ($tasks) {
-    $tasks | Out-GridView -Title "Scheduler catcher by NOLW" -PassThru
+    $tasks | Out-GridView -Title "Scheduler Parser" -PassThru
 } else {
     Write-Host "No tasks found"
 }
 
 
-Read-Host "Press enter to quit"
+Write-Host "by nolw (DogShit SSer)" -ForegroundColor Magenta
