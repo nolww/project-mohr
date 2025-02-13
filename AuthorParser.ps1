@@ -13,7 +13,7 @@ $tasks = Get-ScheduledTask |
 if ($tasks) {
     $tasks | Out-GridView -Title "Manual tasks by nolw"
 } else {
-    Write-Host "Nenhuma tarefa agendada encontrada para o usuário: $UserRN"
+    Write-Host "No manually created tasks found"
 }
 
 
