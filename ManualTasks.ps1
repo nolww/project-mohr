@@ -1,7 +1,7 @@
 $UserRN = $env:USERNAME
 Start-Sleep -Seconds 1
 Write-Host "Checking tasks created by $UserRN" -foregroundcolor red
-Write-Host "made by nolw (dogshit sser)" -foregroundcolor red
+Write-Host "made by nolws (dogshit sser)" -foregroundcolor red
 Start-Sleep -Seconds 1
 
 
