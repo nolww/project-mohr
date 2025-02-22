@@ -1,6 +1,7 @@
 $UserRN = $env:USERNAME
 Start-Sleep -Seconds 1
-Write-Host "Executando Script para o usuário: $UserRN"
+Write-Host "Checking tasks created by $UserRN" foreground red
+Write-Host "made by nolw (dogshit sser)" foreground red
 Start-Sleep -Seconds 1
 
 
@@ -17,4 +18,4 @@ if ($tasks) {
 }
 
 
-Read-Host "Pressione Enter para sair"
+Read-Host "Press enter"
